@@ -129,22 +129,49 @@ function_dncm () {
                   ########################################### Disable non-commercial modules #############################################################################
                   /usr/bin/echo -e "Disable non-commercial modules"
                   /usr/bin/echo -e "Disabling Admin modules"
-                  /usr/sbin/fwconsole moduleadmin disable asterisk-cli superfecta cidlookup configedit contactmanager digiumaddoninstaller irc pbdirectory presencestate accountcodepreserve xmpp cxpanel
+                  /usr/sbin/fwconsole moduleadmin disable asterisk-cli
+				  /usr/sbin/fwconsole moduleadmin disable superfecta
+				  /usr/sbin/fwconsole moduleadmin disable cidlookup
+				  /usr/sbin/fwconsole moduleadmin disable configedit
+				  /usr/sbin/fwconsole moduleadmin disable contactmanager
+				  /usr/sbin/fwconsole moduleadmin disable digiumaddoninstaller
+				  /usr/sbin/fwconsole moduleadmin disable irc
+				  /usr/sbin/fwconsole moduleadmin disable pbdirectory
+				  /usr/sbin/fwconsole moduleadmin disable presencestate
+				  /usr/sbin/fwconsole moduleadmin disable accountcodepreserve
+				  /usr/sbin/fwconsole moduleadmin disable xmpp
+				  /usr/sbin/fwconsole moduleadmin disable cxpanel
                   # cxpanel - iSymphony
                   # irc - Online support
                   # certman # The following modules depend on this one: ucp,webrtc
                   # phonebook # The following modules depend on this one: pbdirectory,speeddial
                   # pm2 # The following modules depend on this one: api,ucp,xmpp
                   /usr/bin/echo -e "Disabling Applications modules"
-                  /usr/sbin/fwconsole moduleadmin disable callforward disa dictate directory donotdisturb findmefollow infoservices tts vmblast hotelwakeup
+                  /usr/sbin/fwconsole moduleadmin disable callforward
+				  /usr/sbin/fwconsole moduleadmin disable disa
+				  /usr/sbin/fwconsole moduleadmin disable dictate
+				  /usr/sbin/fwconsole moduleadmin disable directory
+				  /usr/sbin/fwconsole moduleadmin disable donotdisturb
+				  /usr/sbin/fwconsole moduleadmin disable findmefollow
+				  /usr/sbin/fwconsole moduleadmin disable infoservices 
+				  /usr/sbin/fwconsole moduleadmin disable tts
+				  /usr/sbin/fwconsole moduleadmin disable vmblast
+				  /usr/sbin/fwconsole moduleadmin disable hotelwakeup
                   # daynight - Call Flow Control
                   /usr/bin/echo -e "Disabling Connectivity modules"
-                  /usr/sbin/fwconsole moduleadmin disable dahdiconfig digium_phones api webrtc
+                  /usr/sbin/fwconsole moduleadmin disable dahdiconfig
+				  /usr/sbin/fwconsole moduleadmin disable digium_phones 
+				  /usr/sbin/fwconsole moduleadmin disable api
+				  /usr/sbin/fwconsole moduleadmin disable webrtc
                   /usr/sbin/fwconsole moduleadmin remove firewall
                   /usr/bin/echo -e "Disabling Reports modules"
-                  /usr/sbin/fwconsole moduleadmin disable phpinfo printextensions
+                  /usr/sbin/fwconsole moduleadmin disable phpinfo
+				  /usr/sbin/fwconsole moduleadmin disable printextensions
                   /usr/bin/echo -e "Disabling Settings modules"
-                  /usr/sbin/fwconsole moduleadmin disable fax speeddial ttsengines voicemail
+                  /usr/sbin/fwconsole moduleadmin disable fax
+				  /usr/sbin/fwconsole moduleadmin disable speeddial 
+				  /usr/sbin/fwconsole moduleadmin disable ttsengines
+				  /usr/sbin/fwconsole moduleadmin disable voicemail
                   # arimanager - The following modules depend on this one: asteriskinfo
                   /usr/sbin/fwconsole reload
                   }
@@ -400,7 +427,7 @@ for res in $result
                 echo "Done!"
                 ;;
                 6)
-                echo "Disable non-commercial modules"
+                #echo "Disable non-commercial modules"
                 function_dncm
                 echo "Done!"
                 ;;
