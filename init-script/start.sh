@@ -368,6 +368,32 @@ mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.kvst
 /usr/sbin/fwconsole reload
                      }
 
+function_serverintitle () {
+
+######################################## Include server name in browser ########################################
+
+fpbx_pass=`awk -F= '/^.*AMPDBPASS/{gsub(/ /,"",$2);print $2}' /etc/freepbx.conf | sed 's/";//;s/"//')`
+mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.freepbx_settings SET value="1" WHERE `keyword`="SERVERINTITLE";'
+
+/usr/sbin/fwconsole restart
+                      }
+
+function_sipdriver () {
+
+######################################## Choose SIP DRIVER ########################################
+
+fpbx_pass=`awk -F= '/^.*AMPDBPASS/{gsub(/ /,"",$2);print $2}' /etc/freepbx.conf | sed 's/";//;s/"//')`
+
+    case $sip in
+         1)
+		 mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.freepbx_settings SET value="chan_pjsip" WHERE `keyword`="ASTSIPDRIVER";'
+         ;;
+         2)
+         mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.freepbx_settings SET value="chan_sip" WHERE `keyword`="ASTSIPDRIVER";'
+    esac
+/usr/sbin/fwconsole restart
+		 }					  
+
 
 
 
@@ -389,6 +415,8 @@ result=$(dialog --clear --backtitle "IT PROFIT" --checklist "What do you want to
 13 "Automate process enabling and simple configuration net filter for FreePBX" off \
 14 "Disable feature codes" off \
 15 "Disable All automatic updates" off \
+16 "Include server name in browser" off \
+17 "Choose SIP DRIVER" off \
 2>&1 >/dev/tty)
 
 sip=$(dialog --backtitle "IT PROFIT" --menu "Which sip-driver do you use?:" 0 0 0 \
@@ -474,6 +502,14 @@ for res in $result
                 14)
                 echo "Disabling all automatic updates FreePBX"
                 function_sheduler
+                echo "Done!"
+				;;
+				15)
+                function_serverintitle
+                echo "Done!"
+				;;
+				15)
+                function_sipdriver
                 echo "Done!"
       esac
 done
