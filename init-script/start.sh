@@ -240,6 +240,8 @@ function_zic () {
                   read EXIP
                   /usr/bin/echo -n "Input your(Firm) VPN IP. Format X.X.X.X: "
                   read VPNIP
+				  /usr/bin/echo -n "Input ZabbiX LISTEN port: "
+                  read ZPORT
                   /usr/bin/rpm -Uvh https://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7.noarch.rpm
                   /usr/bin/yum install zabbix-agent -y
                   /usr/bin/echo -n "Input your(Client) ZabbiX Hostname. No Spaces: "
@@ -249,7 +251,7 @@ function_zic () {
                   /usr/bin/sed -i '/Hostname=/d' /etc/zabbix/zabbix_agentd.conf
                   /usr/bin/echo "#Generated IT Profit Initial Script
 Server=$EXIP,$VPNIP
-ListenPort=10059
+ListenPort=$ZPORT
 Hostname=$ZHN
 " >> /etc/zabbix/zabbix_agentd.conf
                   /usr/bin/systemctl enable zabbix-agent
