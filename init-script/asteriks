@@ -1,0 +1,58 @@
+echo "
+MMMMWNXXkdlxooddxdoooooooooooddoooddodooooddoooollc::lllolllclllcllclclc:c:::::::::::;;;;,,',,;;;;;;;;;,',;,,,
+MMMMWNXKxoodoodxdddddoooloooooooooddooodoododooololcccoooolllllclllccclc::::::;;:;;;;;;;;;;,,,,,,;;;;;,,',,'''
+MMMMNNX0loodllxdooooddddddooooooooooooddoooooooooolllooodollccccllll:clcc:::;;;;;;,;;;;;;;;;,,,,,,;,,;;'''''''
+MMMMWNXOllllldxddddxxOxddooodooodooooddoooollllooollcloooolccccllllccccc:::::;;;;;;:;;;,;;;;;,;;;,,,,,,,',..''
+MMMMNNXOoclllxxxxxkkOkxxkOkOkkxodolccllllllccccooolcclolllccccllllol:cc:clc:;;;:;,,;;',,,',;;;,,;;;,,;,,,''',,
+MMMWNNXkooc;oddkxxdxkxOOOxkkxkkxdll:;;;::cc:::looolcclcccccccccccoloooccoolcoclllc,',;,,,,,,,,,,;;;::;;;;,,,''
+MMWNNNXOddlcloodododdxxxoxxocc:cc:;'',,,,;:::clloolc:cc;;;;:c::::lccloodl:cllxdxxddolooo;;;''',;;;;;:;;;,,,'''
+MMWNNNXOdxclloooodxkkkxxollc:;,,''...'',;::ccllooolc::;;,,,:c:;,,,:;;',:oll:c:;;cc;,;:c:l:'';',;;;;,,',,''''''
+MMWNNNXkdxlcdodxxkkkdoc;'..'......    .',;::llllllcc::;,,,',;;,,,,,;;;;;:;;;;;cc:;;,,,,,,;;,::,,,'',;;,',,'...
+MMWNNNKxdxd:lodOOkdl;...'..'.      ..   .',;:cccccc::;,''....'.'.',''.........''.''',,,,;,'',;;'.',,,,,;;.....
+MMWWNNXkdxo::ccodo;. ...;lxl.,o'    .....',,,:ccc::;;;,'............. ..'.......      ....'''''',''..,;,',;,,'
+MMMWNNXOkl;,'''...   ...;lkx..'     ..  .';;;:::c:;;;,'......   ........'.ckd'cl          ..'''''''','.',;;,''
+MMMWNNKOko::;;,':c,...,,,''''..........''',;;:ccc::;;,''....     ..    ...:dd.,'             ..... ......',;;,
+MMMMWXKOxl:ccc::c::::,',,;,,'.'.......''';:::cccc::;,,,''..   . ...''.....'''..... .....   ..     ...'.'','...
+MMMMWXKOlcccccc:cc;'.',;;:::;,,'.....'';c:::cllcc:;,,,,'...   ....','....'''''...........''...'.''',,;;;;,,;;,
+MMMMWNXxccccclllcc::;,'.''',,'.....',:::c::cllll::;;,,......   ...',;,'..'..''',,,,,'''.......'',;,,,,,;;;;,;;
+MMMMMWXxol:cclccc::::::;,,,,,,,,;,,,;:::::clolll::;;,'.......   ....,;,,,''....................'',,,,,,,,;;;,,
+MMMMMNKxlccllllllcc::::;;::::;;;;,,,;;:::cloolll::;;,''..............',;;;;;,''''........''''',,,;;;,,;;,,',;'
+MMMMMWXxllooolollcccccccccc::c:;;,;;:ccllloolllc:;;,,,'................',;;;::;:;;,,,,,,,,,,,,,,,,,,;,,;;;;,',
+MMMMMWXklooooooolllllcllccccclcccccllllloodoollc:;;;;,,''''''''..'''''..,,,;;::::;,,;,;,,,,,,;,,,,,,,,,',;,,,,
+MMMMMWKkodddoolllooollllcllclllllccccc:coddoolc;;,,;;,,,,,,,''.......''',,,';;:::::;;;;;,;;;,,,,,,,,,,,,',,,;,
+MMMMMMXkodddoolloooolllllllllc:;;;;::cclddddlll:;;;;,,,,,'''........ ..',,;;;;::c::::;;,,;,,,;,,,;;;;;''',';,;
+MMMMMMNklddooololoololllcc::;,''.',:oodxkkxxdool:;;;;;,,,',,,,,;;,,..  ....,,;;:ccc:::;;;,,;,,,,,,;;:;;,,',,;;
+MMMWMMWkcodooollllllllcc;;,'....',:okkOK0OOOkddddlc:;;;clc:ccllcllc;.      ...';;::::;;;,,,,,,,,;;;;;;,,,'';;;
+MMWWWWWOclooooolllllcc:,''....,;:ccok0KKKOk0kkdxxoc:;;;:;:cc:::;:::,.   ........',;;;;,,,,,,,,,,;;;;;;,;,.',:;
+MMMMMWWk;clclollccccc;,'....,;::::ccllodkOxxdoooolc:;,,,,,'......... .............',,,,,,,,','',,,,,,,,;'.'';;
+MMMMMMNd,:cclollccc:;,'..',;:cccccclllodldxxdolccc:,,;;'...     .........'..........',,,,'',''',',',',,,'..,,,
+MMMMMWKl,,c:lllcc:;;,'.',;cclldooxdkkxxkxxdooolc::;;;'.  ... ....'',,,','';'...',''...'',,'',''''''''''''..'''
+MMMMMM0c,;c;clccc:;;,',;ccxxxOxx00000O0XO00odxxxxol;;'.'',;:,:;l:'cllol;',c;;c::,;l;';,'',,,,'''''''..'''..'''
+MMMMMMO:,:l:lcc:::;,,;:clxO0XK00XNNOk0XNKOKxkK0Oxdk:;';;',',,oo:;llodxdc':cdcclcclc:do:;'',,',',,,'''...'..'''
+MMMMWW0:,;c:clcccc;;::clOK0XNNKK00Kxdxxxdxdoxxlodoc,;:;..,'.':;,:ccdl::;.:ldkcclcdo:cddc'.',;,,',',''..',,',''
+MMMMWWKc,;::cclccc::::lo0N0KKXOOddlc::::::cclcc::::;,'............'......'.':;'lodl:o:xx..';;;;,,''''...',',,'
+MMMMMWKo:::;:clclc::;:loxXOxxdll;'...,;:cc:::cc::::;;''................      ...':;:dold,',:;;;,,'''..',,,',,'
+MMMWWNKll:,,;:cllcccccloxOxxc:c,    .c:dl,ll:..;;;,'....'.. .''. .',.          ...':dOc',,::;;;,'''...'',,,''.
+MMMWWNNOo;'.,:clllllolddOk0occl:.   dOKWXKMWK,xWWN0o,OKK00d;0XKO;dO0d  '.    .....,,xOo:;cc;;,,''....',,,,,''.
+MMMMWWNKod,.',;cloodddxx0Oxxdoooc'. :dKNNNMMW0MMMMWX0MWWNWNkNNXKOd00x...   .....',;:;llodl:;;,,'....',,',,,''.
+MMMMWWNX0kl::;::cloddk0XKKOxdddolc:,'':l:codocKXNNN0kNXKK0Ocddol;.,'.   ..''...'.,:;cc.cxll:c:'..'.',,',,'''''
+MMWNNNNNN00xodlcolldk0KKK0ddddoolllc::::::;;;,,,,;,,';;,,''....'.......'''''''',:,:,ldcloloddl;;;,',,,,,,,,,,;
+MWWNNNNNNKOOkdklxoodOXNNNOOOkdooloollcc:::::cccc::;:;;;,,'''......''.''''..'..,,,;,:oc:occcld,'cd:,;;;::c;:ccd
+MWWNNNWNNXK00xoddxdxO000kkkOkkxddooooolccc:cccccc::::;,,'''......'.'',,''''';'',,;codod:;,;;.c;olx;;col;loodd:
+WWNNNNWWWNXKKOxkOxxxkxOOKXXXK0kdxddxxdooolllllccc::;;;;;;,,',''''''',;,,'''':;,:c;;ckOocc':.'d:xdoodokx;OOOddo
+MMWWWWMMMWWNXkk00xxxdlok0XXXXKOxxxkkxkOkOxddddddloll::;cllclololc:::;:;:,,:l,:;dxloldOdccl:;;,lxxkOxxKkOKxKklc
+MMMMMMMMMMMWXKO0kdlllloxO0KXNNXKOOOOO00OkkOOkkxOOoxxodooOOdodxkKXOl;::;;clcooxdkXdo00ocodl;l;:,lo0OOK0OKOkx;;o
+MMMMMMMMMMMMMWNKkdoollodk0XXNKKK0kOO0OOO00O0OxkKOxxkxxo00Okkodcokkkloc;ooddxxOk00lox0xcooOOx::o;o0XkxKk0koo;;c
+MMMMMMMMMMMMMMWNXOkdlddkO0KKKKXK00kkOOOO0K0kxxx0OloxxdxOKOolokolcoOxdclkocxdxOXOoldcdxl:okOc:lklokkokKKXddl:,;
+MMMMMMMMMMMMMMMWWN0kO0dkxO000KK0000K0kkkOkkkkxxOddxdkOKOO0kddoolloxol:dk:lxk,:lxlckol:;,;.coddO:olllOX0:;:;...
+MMMMMMMMMMMMMMMMWNKkxkk0XKKK0KKxO0OOOkOxxxxdxOkOxxkloxOkkoll:lx;;c:ol:lodooOo:'ocdxo;lc;,.,dxck,l;:oxx:.;.'.  
+
+
++-------------------------------+
+| Supports by IT PROFIT		|
+| tel. +7 4832 300-098		|
+| post@itprofit32.ru		|
+| www.itprofit32.ru 		|
++-------------------------------+
+
+"
