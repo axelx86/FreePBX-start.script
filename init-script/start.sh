@@ -80,7 +80,7 @@ alias p='asterisk -rx "sip show peers"'
 function_decm () {
  ########################################### Disable enabled commercial modules ############################################################################
 
-                 /usr/bin/echo -e "Disable enabled commercial modules"
+                /usr/bin/echo -e "Disable enabled commercial modules"
                 # Disable enabled commercial modules
                 # CMC - Commercial module count
                 # CDC - Count Depended modules
@@ -88,17 +88,18 @@ function_decm () {
                 # Selected row
 
                 /usr/bin/echo "Disabling Modules"
-
+				/usr/sbin/fwconsole moduleadmin remove iotserver
+				/usr/sbin/fwconsole moduleadmin remove vega
                 SR=1
-                CMC=`/usr/sbin/fwconsole moduleadmin list | /usr/bin/grep "Commercial" | /usr/bin/grep "Enabled" | /usr/bin/grep -v "sysadmin" | /usr/bin/wc -l`
+                CMC=`/usr/sbin/fwconsole moduleadmin list | /usr/bin/grep "Commercial" | /usr/bin/grep "Enabled\|Включен" | /usr/bin/grep -v "sysadmin" | /usr/bin/wc -l`
 
                     while [ $CMC -gt 0 ]
 
                           do
 
-                            CM=`/usr/sbin/fwconsole moduleadmin list | /usr/bin/grep "Commercial" | /usr/bin/grep "Enabled" | /usr/bin/grep -v "sysadmin" | /usr/bin/awk '{print $2}' | /usr/bin/head -n $SR | /usr/bin/tail -n 1`
+                            CM=`/usr/sbin/fwconsole moduleadmin list | /usr/bin/grep "Commercial" | /usr/bin/grep "Enabled\|Включен" | /usr/bin/grep -v "sysadmin" | /usr/bin/awk '{print $2}' | /usr/bin/head -n $SR | /usr/bin/tail -n 1`
 
-                            #/usr/bin/echo "Выбраная строка $SR"
+                            /usr/bin/echo "Выбраная строка $SR"
                             /usr/bin/echo "Module Number $CMC"
                             /usr/bin/echo "Disabling $CM module"
                             /usr/sbin/fwconsole moduleadmin disable $CM
@@ -106,15 +107,15 @@ function_decm () {
                             CMC=$[ $CMC - 1 ]
                             SR=$[ $SR + 1 ]
 
-                            CDC=`/usr/sbin/fwconsole moduleadmin list | /usr/bin/grep "Commercial" | /usr/bin/grep "Enabled" | /usr/bin/grep -v "sysadmin" | /usr/bin/wc -l`
-                            /usr/bin/echo "$CDC modules remain"
-                            #/usr/bin/echo "Остаток модулей $CDC остаток строк $CMC"
+                            CDC=`/usr/sbin/fwconsole moduleadmin list | /usr/bin/grep "Commercial" | /usr/bin/grep "Enabled\|Включен" | /usr/bin/grep -v "sysadmin" | /usr/bin/wc -l`
+                            #/usr/bin/echo "$CDC modules remain"
+                            /usr/bin/echo "Остаток модулей $CDC остаток строк $CMC"
 
                             if [ "$CDC" -ne 0 -a "$CMC" = 0 ]
 
                                 then
                                      /usr/bin/echo "Remained not yet disabled&dependent modules, repeat the operation"
-                                     #/usr/bin/echo "Остались ещё не отключеные, зависимые модули, повторяем операцию"
+                                     /usr/bin/echo "Остались ещё не отключеные, зависимые модули, повторяем операцию"
                                      CMC=$CDC
                                      SR=1
                             fi
@@ -346,8 +347,8 @@ mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.kvst
 
 #-------------------------------------------------------------------------
 result=$(dialog --clear --backtitle "IT PROFIT" --checklist "What do you want to install?:" 0 0 0 \
-1 "Update SYSTEM" on \
-2 "Update all asterisk modules" on  \
+1 "Update SYSTEM" off \
+2 "Update all asterisk modules" off  \
 3 "Change Message of the Day" off \
 4 "Aliases" off \
 5 "Disable enabled commercial modules" off \
@@ -394,7 +395,7 @@ for res in $result
                 echo "Done!"
                 ;;
                 5)
-                echo "Disable enabled commercial modules"
+                #echo "Disable enabled commercial modules"
                 function_decm
                 echo "Done!"
                 ;;
