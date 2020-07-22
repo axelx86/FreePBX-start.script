@@ -1,16 +1,12 @@
 #!/bin/bash
-############################################# START MESSAGE #################################################################################################################
-
 DIR=`pwd`
-
+fpbx_pass=`awk -F= '/^.*AMPDBPASS/{gsub(/ /,"",$2);print $2}' /etc/freepbx.conf | sed 's/";//;s/"//'`
 /usr/bin/echo -en "
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 *                             \033[37;1;41m Warning!!! \033[0m                                *
 * \033[37;1;41m This script tested and work only Sangoma OS 7.X(CentOS 7.X)  or above \033[0m *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-
 "
-
 /usr/bin/echo -en "Before yousing script ACTIVATE your system"
 
 yum install -y -q dialog
@@ -88,8 +84,8 @@ function_decm () {
                 # Selected row
 
                 /usr/bin/echo "Disabling Modules"
-				/usr/sbin/fwconsole moduleadmin remove iotserver
-				/usr/sbin/fwconsole moduleadmin remove vega
+                /usr/sbin/fwconsole moduleadmin remove iotserver
+                /usr/sbin/fwconsole moduleadmin remove vega
                 SR=1
                 CMC=`/usr/sbin/fwconsole moduleadmin list | /usr/bin/grep "Commercial" | /usr/bin/grep "Enabled\|Включен" | /usr/bin/grep -v "sysadmin" | /usr/bin/wc -l`
 
@@ -130,17 +126,17 @@ function_dncm () {
                   /usr/bin/echo -e "Disable non-commercial modules"
                   /usr/bin/echo -e "Disabling Admin modules"
                   /usr/sbin/fwconsole moduleadmin disable asterisk-cli
-				  /usr/sbin/fwconsole moduleadmin disable superfecta
-				  /usr/sbin/fwconsole moduleadmin disable cidlookup
-				  /usr/sbin/fwconsole moduleadmin disable configedit
-				  /usr/sbin/fwconsole moduleadmin disable contactmanager
-				  /usr/sbin/fwconsole moduleadmin disable digiumaddoninstaller
-				  /usr/sbin/fwconsole moduleadmin disable irc
-				  /usr/sbin/fwconsole moduleadmin disable pbdirectory
-				  /usr/sbin/fwconsole moduleadmin disable presencestate
-				  /usr/sbin/fwconsole moduleadmin disable accountcodepreserve
-				  /usr/sbin/fwconsole moduleadmin disable xmpp
-				  /usr/sbin/fwconsole moduleadmin disable cxpanel
+                  /usr/sbin/fwconsole moduleadmin disable superfecta
+                  /usr/sbin/fwconsole moduleadmin disable cidlookup
+                  /usr/sbin/fwconsole moduleadmin disable configedit
+                  /usr/sbin/fwconsole moduleadmin disable contactmanager
+                  /usr/sbin/fwconsole moduleadmin disable digiumaddoninstaller
+                  /usr/sbin/fwconsole moduleadmin disable irc
+                  /usr/sbin/fwconsole moduleadmin disable pbdirectory
+                  /usr/sbin/fwconsole moduleadmin disable presencestate
+                  /usr/sbin/fwconsole moduleadmin disable accountcodepreserve
+                  /usr/sbin/fwconsole moduleadmin disable xmpp
+                  /usr/sbin/fwconsole moduleadmin disable cxpanel
                   # cxpanel - iSymphony
                   # irc - Online support
                   # certman # The following modules depend on this one: ucp,webrtc
@@ -148,30 +144,30 @@ function_dncm () {
                   # pm2 # The following modules depend on this one: api,ucp,xmpp
                   /usr/bin/echo -e "Disabling Applications modules"
                   /usr/sbin/fwconsole moduleadmin disable callforward
-				  /usr/sbin/fwconsole moduleadmin disable disa
-				  /usr/sbin/fwconsole moduleadmin disable dictate
-				  /usr/sbin/fwconsole moduleadmin disable directory
-				  /usr/sbin/fwconsole moduleadmin disable donotdisturb
-				  /usr/sbin/fwconsole moduleadmin disable findmefollow
-				  /usr/sbin/fwconsole moduleadmin disable infoservices 
-				  /usr/sbin/fwconsole moduleadmin disable tts
-				  /usr/sbin/fwconsole moduleadmin disable vmblast
-				  /usr/sbin/fwconsole moduleadmin disable hotelwakeup
+                  /usr/sbin/fwconsole moduleadmin disable disa
+                  /usr/sbin/fwconsole moduleadmin disable dictate
+                  /usr/sbin/fwconsole moduleadmin disable directory
+                  /usr/sbin/fwconsole moduleadmin disable donotdisturb
+                  /usr/sbin/fwconsole moduleadmin disable findmefollow
+                  /usr/sbin/fwconsole moduleadmin disable infoservices
+                  /usr/sbin/fwconsole moduleadmin disable tts
+                  /usr/sbin/fwconsole moduleadmin disable vmblast
+                  /usr/sbin/fwconsole moduleadmin disable hotelwakeup
                   # daynight - Call Flow Control
                   /usr/bin/echo -e "Disabling Connectivity modules"
                   /usr/sbin/fwconsole moduleadmin disable dahdiconfig
-				  /usr/sbin/fwconsole moduleadmin disable digium_phones 
-				  /usr/sbin/fwconsole moduleadmin disable api
-				  /usr/sbin/fwconsole moduleadmin disable webrtc
+                  /usr/sbin/fwconsole moduleadmin disable digium_phones 
+                  /usr/sbin/fwconsole moduleadmin disable api
+                  /usr/sbin/fwconsole moduleadmin disable webrtc
                   /usr/sbin/fwconsole moduleadmin remove firewall
                   /usr/bin/echo -e "Disabling Reports modules"
                   /usr/sbin/fwconsole moduleadmin disable phpinfo
-				  /usr/sbin/fwconsole moduleadmin disable printextensions
+                  /usr/sbin/fwconsole moduleadmin disable printextensions
                   /usr/bin/echo -e "Disabling Settings modules"
                   /usr/sbin/fwconsole moduleadmin disable fax
-				  /usr/sbin/fwconsole moduleadmin disable speeddial 
-				  /usr/sbin/fwconsole moduleadmin disable ttsengines
-				  /usr/sbin/fwconsole moduleadmin disable voicemail
+                  /usr/sbin/fwconsole moduleadmin disable speeddial
+                  /usr/sbin/fwconsole moduleadmin disable ttsengines
+                  /usr/sbin/fwconsole moduleadmin disable voicemail
                   # arimanager - The following modules depend on this one: asteriskinfo
                   /usr/sbin/fwconsole reload
                   }
@@ -204,7 +200,6 @@ function_freepbx_logo () {
                           /usr/bin/cp -f $DIR/top_logo.png /var/www/html/admin/images/top_logo.png
                           wget -q http://itpr32.ru/itpr_favicon.ico -O /var/www/html/admin/images/itpr_favicon.ico
                           /usr/bin/cp -f $DIR/itpr_favicon.ico /var/www/html/admin/images/itpr_favicon.ico
-                          fpbx_pass=`awk -F= '/^.*AMPDBPASS/{gsub(/ /,"",$2);print $2}' /etc/freepbx.conf | sed 's/";//;s/"//'`
                           mysql --user=freepbxuser --password=$fpbx_pass asterisk <<EOF
 REPLACE INTO \`freepbx_settings\` (\`keyword\`, \`value\`, \`name\`, \`level\`, \`description\`, \`type\`, \`options\`, \`defaultval\`, \`readonly\`, \`hidden\`, \`category\`, \`module\`, \`emptyok\`, \`sortorder\`) VALUES	
 ('BRAND_IMAGE_FAVICON', 'images/itpr_favicon.ico', 'Favicon', 1, 'Favicon', 'text', '', 'images/favicon.ico', 1, 1, 'Styling and Logos', '', 0, 40),
@@ -240,7 +235,7 @@ function_zic () {
                   read EXIP
                   /usr/bin/echo -n "Input your(Firm) VPN IP. Format X.X.X.X: "
                   read VPNIP
-				  /usr/bin/echo -n "Input ZabbiX LISTEN port: "
+                   /usr/bin/echo -n "Input ZabbiX LISTEN port: "
                   read ZPORT
                   /usr/bin/rpm -Uvh https://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7.noarch.rpm
                   /usr/bin/yum install zabbix-agent -y
@@ -309,7 +304,7 @@ function_fc () {
 -A INPUT -p tcp -m tcp --dport 22 -j ADMIN
 -A INPUT -p tcp -m tcp --dport 80 -j LOCAL
 -A INPUT -p tcp -m tcp --dport 443 -j LOCAL
--A INPUT -p udp -m udp --dport 5363 -j SIP
+-A INPUT -p udp -m udp --dport 5060 -j SIP
 -A INPUT -p udp -m udp --dport 10000:20000 -j SIP
 -A INPUT -p udp -m udp --dport 4569 -j IAX2
 -A INPUT -p tcp -m tcp --dport 10559 -j SERVER
@@ -344,10 +339,7 @@ COMMIT
                   }
 
 function_features () {
-fpbx_pass=`awk -F= '/^.*AMPDBPASS/{gsub(/ /,"",$2);print $2}' /etc/freepbx.conf | sed 's/";//;s/"//'`
-mysql --user=freepbxuser --password=$fpbx_pass asterisk <<EOF
-   UPDATE asterisk.featurecodes SET enabled=N'0' WHERE enabled=N'1';
-EOF
+mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.featurecodes SET enabled="0" WHERE enabled="1";'
 
 /usr/sbin/fwconsole reload
                       }
@@ -358,9 +350,6 @@ function_sheduler () {
 read EMAIL
 /usr/bin/echo -n "Input your(Firm) system identity for FreePBX: "
 read IDENTITY
-
-fpbx_pass=`awk -F= '/^.*AMPDBPASS/{gsub(/ /,"",$2);print $2}' /etc/freepbx.conf | sed 's/";//;s/"//')`
-
 mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.kvstore_FreePBX SET val="$EMAIL" WHERE `key`="notification_emails";'
 mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.kvstore_FreePBX SET val="$IDENTITY" WHERE `key`="system_ident";'
 mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.kvstore_FreePBX SET val="disabled" WHERE `key`="auto_system_updates";'
@@ -374,7 +363,6 @@ function_serverintitle () {
 
 ######################################## Include server name in browser ########################################
 
-fpbx_pass=`awk -F= '/^.*AMPDBPASS/{gsub(/ /,"",$2);print $2}' /etc/freepbx.conf | sed 's/";//;s/"//')`
 mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.freepbx_settings SET value="1" WHERE `keyword`="SERVERINTITLE";'
 
 /usr/sbin/fwconsole restart
@@ -384,21 +372,16 @@ function_sipdriver () {
 
 ######################################## Choose SIP DRIVER ########################################
 
-fpbx_pass=`awk -F= '/^.*AMPDBPASS/{gsub(/ /,"",$2);print $2}' /etc/freepbx.conf | sed 's/";//;s/"//')`
-
     case $sip in
          1)
-		 mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.freepbx_settings SET value="chan_pjsip" WHERE `keyword`="ASTSIPDRIVER";'
+         mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.freepbx_settings SET value="chan_pjsip" WHERE `keyword`="ASTSIPDRIVER";'
          ;;
          2)
          mysql --user=freepbxuser --password=$fpbx_pass asterisk -e 'UPDATE asterisk.freepbx_settings SET value="chan_sip" WHERE `keyword`="ASTSIPDRIVER";'
     esac
+
 /usr/sbin/fwconsole restart
-		 }					  
-
-
-
-
+                        }
 
 #-------------------------------------------------------------------------
 result=$(dialog --clear --backtitle "IT PROFIT" --checklist "What do you want to install?:" 0 0 0 \
@@ -505,12 +488,12 @@ for res in $result
                 echo "Disabling all automatic updates FreePBX"
                 function_sheduler
                 echo "Done!"
-				;;
-				15)
+                ;;
+                15)
                 function_serverintitle
                 echo "Done!"
-				;;
-				15)
+                ;;
+                15)
                 function_sipdriver
                 echo "Done!"
       esac
